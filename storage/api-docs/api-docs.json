@@ -1,0 +1,197 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Resources API",
+        "description": "Ma superbe API",
+        "version": "1.0"
+    },
+    "paths": {
+        "/index": {
+            "get": {
+                "tags": [
+                    "Tags"
+                ],
+                "summary": "Welcome page",
+                "description": "Description",
+                "operationId": "8af9144432ebc6fe133b0395be722e9b",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/api/v1/ressources": {
+            "get": {
+                "tags": [
+                    "Ressources"
+                ],
+                "summary": "Ressouces list",
+                "description": "Description",
+                "operationId": "cac8c2c09906c8cf2a1cdd908eacdabe",
+                "responses": {
+                    "200": {
+                        "description": "Récupérer la liste des ressources"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Ressources"
+                ],
+                "summary": "Ajouter une ressource",
+                "operationId": "1ba4ee721344fa930d030b1f3ad87548",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "lien"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "logo": {
+                                        "type": "string"
+                                    },
+                                    "lien": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Utilisateurs récupérés avec succès"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        },
+        "/api/v1/ressources/{id}": {
+            "get": {
+                "tags": [
+                    "Ressources"
+                ],
+                "summary": "Rescupérer une ressource",
+                "operationId": "0abe372a498c6b2f5c97c6efb7381c60",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Parameter with example",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Utilisateurs récupérés avec succès"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Ressources"
+                ],
+                "summary": "Editer une ressource",
+                "description": "Description",
+                "operationId": "f02a04384f43d1381ad3374acee490b9",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Parameter with example",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "lien"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "logo": {
+                                        "type": "string"
+                                    },
+                                    "lien": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Utilisateurs récupérés avec succès"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Ressources"
+                ],
+                "summary": "Summary",
+                "description": "Description",
+                "operationId": "35685d204f0b1920098794f979acbedc",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Parameter with example",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response Message"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Tags",
+            "description": "Tags"
+        },
+        {
+            "name": "Ressources",
+            "description": "Ressources"
+        }
+    ]
+}

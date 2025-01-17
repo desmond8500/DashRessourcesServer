@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 class ResponseController extends Controller
 {
     /**
+    * @OA\Info(
+    *     version="1.0",
+    *     title="Title"
+    * )
+    */
+
+
+    /**
      * Reponse API
      *
      * @param boolean $success Description
