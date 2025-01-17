@@ -13,5 +13,4 @@ class Ressource extends Model
         'updated_at' => 'datetime',
     ];
 
-
 }
