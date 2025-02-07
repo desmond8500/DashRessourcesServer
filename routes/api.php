@@ -9,3 +9,4 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::apiResource('v1/ressources', RessourceController::class);
+Route::put('v1/ressources/{id}', [RessourceController::class, 'update']);

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ressource;
-use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\Request;
 
 class RessourceController extends Controller
@@ -37,15 +36,15 @@ class RessourceController extends Controller
      *         @OA\MediaType(
      *             mediaType="multipart/form-data",
      *             @OA\Schema(
-     *                  @OA\Property(property="name", type="string"),
-     *                  @OA\Property(property="description", type="string"),
-     *                  @OA\Property(property="logo", type="string"),
-     *                  @OA\Property(property="lien", type="string"),
+     *                  @OA\Property(property="name"),
+     *                  @OA\Property(property="description"),
+     *                  @OA\Property(property="logo"),
+     *                  @OA\Property(property="lien"),
      *                  required={"name", "lien"}
      *             ),
      *         )
      *      ),
-     *      @OA\Response(response=200, description="Utilisateurs récupérés avec succès"),
+     *      @OA\Response(response=200, description="Ressource created"),
      *      @OA\Response(response=401, description="Unauthorized")
      * )
      */
@@ -126,10 +125,26 @@ class RessourceController extends Controller
      *      @OA\Response(response=401, description="Unauthorized")
      * )
      */
-    public function update($id,Request $request)
+    public function update($id, Request $request)
     {
-        $ressource = Ressource::find($id);
         // return $id;
+        return $request->all();
+
+        $validated = ResponseController::validation(
+            $request,
+            [
+                'name' => 'required',
+                'lien' => 'required',
+            ],
+        );
+        if ($validated) {
+            return $validated;
+        }
+
+        $ressource = Ressource::find($id);
+
+        return $id;
+
         return $request->all();
         if ($ressource) {
             $ressource->update($request->all());

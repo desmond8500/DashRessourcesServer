@@ -51,18 +51,10 @@
                                     "lien"
                                 ],
                                 "properties": {
-                                    "name": {
-                                        "type": "string"
-                                    },
-                                    "description": {
-                                        "type": "string"
-                                    },
-                                    "logo": {
-                                        "type": "string"
-                                    },
-                                    "lien": {
-                                        "type": "string"
-                                    }
+                                    "name": {},
+                                    "description": {},
+                                    "logo": {},
+                                    "lien": {}
                                 },
                                 "type": "object"
                             }
@@ -71,7 +63,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Utilisateurs récupérés avec succès"
+                        "description": "Ressource created"
                     },
                     "401": {
                         "description": "Unauthorized"

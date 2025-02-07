@@ -16,6 +16,7 @@
     },
     "dependencies": {
         "@angular/cdk": "^19.0.5",
+        "@tabler/icons-webfont": "^3.28.1",
         "primeicons": "^7.0.0",
         "primeng": "^19.0.5"
     }

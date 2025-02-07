@@ -1,7 +1,10 @@
 <?php
 
+use App\Livewire\Pages\RessourcesPage;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('ressources');
 });
+
+Route::get('ressources', RessourcesPage::class)->name('ressources');
